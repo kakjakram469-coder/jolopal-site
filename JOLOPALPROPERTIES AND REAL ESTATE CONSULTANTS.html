@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jolopal Properties</title>
+
+<!-- Font Awesome for Social Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-o8c+5D3u1+8/NQ5sR/OZfP2VxT/ZZgK05f8Y9l0uK7yDxQx5sJ9kTcaxEdc5xg3fZ5HNTUy1u0x7THp+HbG4lA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: navy;
+    color: white;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.navbar div a {
+    color: white;
+    margin: 5px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar div a:hover {
+    color: orange;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,50,0.5); /* overlay gradient */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 15px 0 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.btn:hover {
+    background-color: darkorange;
+    transform: translateY(-2px);
+}
+
+/* SECTIONS */
+.section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+/* PROPERTIES */
+.properties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card h3 {
+    color: navy;
+    margin: 10px;
+}
+
+.card p {
+    margin: 0 10px 10px 10px;
+}
+
+/* ABOUT */
+.about {
+    background: #f5f5f5;
+}
+
+/* CONTACT */
+.contact input,
+.contact textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* FOOTER */
+.footer {
+    background-color: navy;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: orange;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.05);}
+    100% { transform: scale(1);}
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1rem; }
+    .navbar { flex-direction: column; }
+    .navbar div { margin-top: 10px; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 0.9rem; }
+    .card { width: 90%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABvElEQVR4nO3XwQ2CQBBF0bXQfJGeiFvSXkh0T8HsoRUzAgjMB0sB0uSPfPwO4Mbht0rbQAMwDH5xDEBy6h8f6H+v9rX+v3r/fdr+jP+m35F10xjzPHGOM88cY4zzxxjjPPOu1yIuT5EC+GvZFRclOqHZM9jVLZc7CZx10xjzPHGOM88cY4zzxxjjPPO8/4XqKfrvRmcXSeUe9xSde6xHxLPPPFtJXy+Ui/1NSD5PpSvqzEdw+z6+x1Ztx34E0s8/8+PAbFAAAAAElFTkSuQmCC" alt="Jolopal Logo">
+    <div>
+        <a href="#">Home</a>
+        <a href="#listings">Listings</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>Jolopal Properties</h1>
+        <p><i>The Pearl of Quality in Real Estate</i></p>
+        <a href="#listings" class="btn">View Properties</a>
+    </div>
+</div>
+
+<!-- LISTINGS -->
+<div class="section" id="listings">
+    <h2>Featured Properties</h2>
+    <div class="properties">
+        <div class="card"><img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c"><h3>Beautiful Family House</h3><p>Spacious, modern and located in a prime area.</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"><h3>Luxury Villa</h3><p>High-end finishes with premium amenities.</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><h3>Modern Apartment</h3><p>Affordable and perfect for urban living.</p></div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section about" id="about">
+    <h2>About Us</h2>
+    <p>
+        Jolopal Properties and Real Estate Consultants stands as a trusted leader in delivering premium real estate solutions. 
+        With a commitment to excellence and integrity, we specialize in connecting clients to high-quality residential and commercial properties. 
+        Our mission is to provide seamless property acquisition, sales, and advisory services tailored to meet individual client needs. 
+        At Jolopal, we don’t just sell property — we deliver value, trust, and long-term investment security. 
+        Truly, we are <b>the pearl of quality in real estate.</b>
+    </p>
+</div>
+
+<!-- CONTACT -->
+<div class="section contact" id="contact">
+    <h2>Contact Us</h2>
+    <p><b>Phone:</b> 0703667575 | 0789396292 | 0703178860 | 0773796433</p>
+    <p><b>Email:</b> jolopalproperties@gmail.com</p>
+    <p><b>Head Office:</b> Misindye Centre, Namugongo Road</p>
+    <p><b>Branch:</b> Mukono, Kayunga Road (After Rubis Petrol Station)</p>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea placeholder="Your Message"></textarea><br>
+    <a href="#" class="btn">Send Message</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>© 2026 Jolopal Properties and Real Estate Consultants</p>
+    <div class="social-icons">
+        <a href="https://wa.me/0703667575" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+</div>
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+},{threshold:0.2});
+
+document.querySelectorAll('.section, .card').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
